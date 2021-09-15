@@ -23,6 +23,7 @@ ich habe kleinbuchstaben genommen,deswegen hat er es irgendwie nicht gerafft
 und er hat es trotzdem auch nicht gerraft, erst nach
 hinzufügen der funktionen mit addeventlistener gingen button
 funktionen
+blabla änmderunmg
 */
 
 function initEventHandlers()
