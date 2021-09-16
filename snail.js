@@ -1,9 +1,9 @@
 import Object from './object.js';
 
 export default class snail extends Object{
-    constructor(startheight,playerheight,width,speed,snailnumber)
+    constructor(startheight,height,width,speed,snailnumber)
     {
-        super(startheight,playerheight,width,speed);
+        super(startheight,height,width,speed);
 
         this.img = new Image();
         this.img.src = "schnecke.png";

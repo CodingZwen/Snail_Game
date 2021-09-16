@@ -5,18 +5,16 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var x =0;
 var y = 0;
-initCanvas();
-var width = canvas.width;
-var height = canvas.height;
 var playercount ;
-var playerwidth ;
-var playerheight = 50;
+var playerwidth =150;
+var playerheight = 150;
 var playerlist = [];
 var playergap = 20;
 var running = false;
 var playery = 0;
-
-
+var w_width=window.innerWidth-100;
+var w_height=window.innerHeight-300;
+initCanvas();
 /*
 fehler beim importeieren.
 ich habe kleinbuchstaben genommen,deswegen hat er es irgendwie nicht gerafft
@@ -41,7 +39,7 @@ initEventHandlers();
 function updateOptions()
 {
     playercount = document.getElementById("spieleranzahl").value;
-    playerwidth = height / playercount;
+    //playerwidth = w_height / playercount;
     console.log("playerwidht: " + playerwidth + " PLayers: " + playercount);
 
     initplayer(playercount);
@@ -57,7 +55,7 @@ function initplayer(playercount)
     for(var i = 0 ; i < playercount; i++)
     {
         //alert(typeof(rnd(1,10)));
-        let pl = new Snail(playery,playerheight,50,rnd(1,10),(i+1));
+        let pl = new Snail(playery,playerheight,playerwidth,rnd(5,10),(i+1));
         playerlist.push(pl);
         playery+=playergap+playerheight;
     }
@@ -96,15 +94,16 @@ function updatePlayers()
 
 function initCanvas()
 {
- canvas.width = 1620;
- canvas.height = 400;
+ canvas.width = w_width;
+ canvas.height = w_height;
 }
 
 
 
 function update()
 {
-    ctx.clearRect(0,0,width,height);
+    ctx.fillStyle = "green";
+    ctx.fillRect(0,0,w_width,w_height);
     updatePlayers();
     drawAllPlayer();
 

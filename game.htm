@@ -13,23 +13,33 @@
 </head>
 <body>
 
-    Unterichtseite
+    <header>
+        <h1>Snail Game</h1>
+    </header>
+    
     <div class="container">
 
         <div>
             <canvas id="canvas">
 
             </canvas>
+            <div>
+                <input type="button" value="Start" id="start">
+                 
+            <input type="button" value="Optionen speichern" id="reset">
+
+            </div>
+            
         </div>
+
         <div>
             <h4>Einstellungen</h4>
             <label>
-                <input type="number" id="spieleranzahl">
+                Spieleranzahl
+                <input type="number" id="spieleranzahl" value=5>
             </label>
-            <input type="button" value="Optionen speichern" id="reset">
-
-            <input type="button" value="Start" id="start">
-
+           
+      
         </div>
 
     </div>

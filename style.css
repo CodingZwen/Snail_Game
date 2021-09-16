@@ -3,11 +3,26 @@
 
 body
 {
-    background-color: black;
+    background-color: rgb(195, 251, 148);
 }
 
 
 #canvas
 {
     border: dotted 1px green;
+    
+}
+
+.container div
+{
+ 
+ 
+
+}
+
+.container 
+{
+    width: 100%;
+    padding-left: 1em;
+    
 }
