@@ -26,3 +26,11 @@ body
     padding-left: 1em;
     
 }
+
+header
+{
+    padding: 0em 40%;
+    font-family: 'Brush Script MT', cursive;
+    text-shadow: 3px 3px #00ff00;
+    font-size: large;
+}

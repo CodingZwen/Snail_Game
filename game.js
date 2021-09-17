@@ -14,7 +14,7 @@ var running = false;
 var playery = 0;
 var w_width=window.innerWidth-100;
 var w_height=window.innerHeight-300;
-initCanvas();
+initGame();
 /*
 fehler beim importeieren.
 ich habe kleinbuchstaben genommen,deswegen hat er es irgendwie nicht gerafft
@@ -22,6 +22,10 @@ und er hat es trotzdem auch nicht gerraft, erst nach
 hinzufügen der funktionen mit addeventlistener gingen button
 funktionen
 blabla änmderunmg
+
+Kardinalität ist bei ERD
+und Multiplizitäten bei UML
+
 */
 
 function initEventHandlers()
@@ -41,12 +45,12 @@ function updateOptions()
     playercount = document.getElementById("spieleranzahl").value;
     //playerwidth = w_height / playercount;
     console.log("playerwidht: " + playerwidth + " PLayers: " + playercount);
-
-    initplayer(playercount);
+    initPlayers(playercount);
+    initPlayer();
 
 }
 
-function initplayer(playercount)
+function initPlayers(playercount)
 {
     playerlist = [];
 
@@ -58,9 +62,18 @@ function initplayer(playercount)
         let pl = new Snail(playery,playerheight,playerwidth,rnd(5,10),(i+1));
         playerlist.push(pl);
         playery+=playergap+playerheight;
+        
+      //  logall("übergebenes playery: ", playery, "gap: ",playergap, "height: " , playerheight);
     }
 
 
+}
+
+function logall(...logs)
+{
+    logs.forEach(element => {
+        console.log(element);
+    });
 }
 
 function drawAllPlayer()
@@ -91,11 +104,24 @@ function updatePlayers()
     }
 }
 
+function initGame()
+{
+    initCanvas();
+    initPlayer();
+}
 
 function initCanvas()
 {
  canvas.width = w_width;
  canvas.height = w_height;
+ 
+}
+
+function initPlayer()
+{
+    var w = parseInt(document.getElementById("groesse").value);
+    playerwidth = w;
+    playerheight = w;
 }
 
 
